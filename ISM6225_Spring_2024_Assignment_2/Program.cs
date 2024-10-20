@@ -135,7 +135,6 @@ namespace Assignment_2
                 }
 
                 return new int[0];
-                return new int[0]; // Placeholder
             }
             catch (Exception)
             {
@@ -180,23 +179,23 @@ namespace Assignment_2
             try
             {
                 // Write your code here
-                int left = 0, right = nums.Length - 1;
+                int l = 0, r = nums.Length - 1;
 
-                while (left < right)
+                while (l < r)
                 {
-                    int mid = left + (right - left) / 2;
+                    int mid = l + (r- l) / 2;
 
-                    if (nums[mid] > nums[right])
+                    if (nums[mid] > nums[r])
                     {
-                        left = mid + 1;
+                        l = mid + 1;
                     }
                     else
                     {
-                        right = mid;
+                        r = mid;
                     }
                 }
 
-                return nums[left];
+                return nums[l];
             }
             catch (Exception)
             {
@@ -212,15 +211,15 @@ namespace Assignment_2
                 // Write your code here
                 if (x < 0) return false;
 
-                int original = x, reversed = 0;
+                int original = x, rev = 0;
                 while (x > 0)
                 {
-                    int remainder = x % 10;
-                    reversed = reversed * 10 + remainder;
+                    int rem = x % 10;
+                    rev= rev* 10 + rem;
                     x /= 10;
                 }
 
-                return original == reversed;
+                return original == rev;
             }
             catch (Exception)
             {
